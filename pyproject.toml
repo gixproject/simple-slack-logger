@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "simple-slack-logger"
+version = "0.6.0"
+description = "Logging handler to send messages to a Slack channel."
+authors = ["giX <viacheslavlab@gmail.com>"]
+license = "Apache"
+readme = "README.md"
+homepage = "https://github.com/gixproject/simple-slack-logger"
+keywords = ["slack", "logging", "notifications", "webhooks"]
+packages = [
+    {include = "slack_logger"},
+]
+classifiers = [
+    "Environment :: Other Environment",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: System :: Logging",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+]
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.23.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b1"
+
+[tool.black]
+line-length = 120
+target-version = ["py38"]
+exclude = """__pycache__|.venv"""
+diff = 1
+color = 1
+check = 1
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
