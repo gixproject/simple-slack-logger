@@ -41,7 +41,7 @@ class SlackHandler(logging.Handler):
 
         if record.exc_text:
             attachments["fields"].append({"title": "Traceback", "value": record.exc_text, "short": False})
-        if record.args and len(record.args) < 10:
+        if record.args and len(str(record.args)) < 10:
             attachments["fields"].append({"title": "Arguments", "value": str(record.args), "short": False})
 
         try:
